@@ -35,7 +35,7 @@ Route::get('/api/hlc', function () {
 
     $priceHistory = $data->map(function (Wind $item) use ($getPrice) {
         return $getPrice($item->speed,$item->timestamp);
-    });
+    })->sortBy('timestamp')->values();
 
 
 
