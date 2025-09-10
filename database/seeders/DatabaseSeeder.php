@@ -194,7 +194,7 @@ class DatabaseSeeder extends Seeder
 
         TrouImage::factory()->create([
             'trou_id' => 8,
-            'file_path' => 'public/images/trous/TrouAnneTroutrou.jpg',
+            'file_path' => 'public/images/trous/AnneTroutrou.jpg',
             'name' => 'Illustration du trou d’Anne Troutrou',
         ]);
 
