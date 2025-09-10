@@ -23,7 +23,7 @@ class TrouFactory extends Factory
             'location' => fake()->city(),
             'diameter' => fake()->randomFloat(2, 0.5, 10),
             'description' => fake()->sentence(),  
-            'category_id' => \App\Models\Category::factory(), // crée automatiquement une catégorie
+            'category_id' => \App\Models\Category::factory(), 
         ];
     }
 }
