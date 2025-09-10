@@ -18,6 +18,7 @@ async function fetchData() {
         }
     });
     const data = await response.json();
+    console.log(data);
     return data;
 }
 
@@ -51,11 +52,11 @@ async function updateChart(period) {
     try {
         monnaieChart.data.datasets[0].label = 'Chargement...';
         monnaieChart.update();
-
         const data = await fetchData();
 
-        monnaieChart.data.labels = data.priceHistory;
-        monnaieChart.data.datasets[0].data = data.price;
+
+        monnaieChart.data.labels = data.priceHistory.map(item => item.timestamp);
+        monnaieChart.data.datasets[0].data = data.priceHistory.map(item => item.price);
         monnaieChart.data.datasets[0].label = 'Valeur €';
         monnaieChart.update();
     } catch (error) {
