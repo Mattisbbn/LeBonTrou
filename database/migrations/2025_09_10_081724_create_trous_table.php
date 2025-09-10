@@ -10,7 +10,7 @@ return new class extends Migration {
         Schema::create('trous', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->float('depht'); 
+            $table->float('depth'); 
             $table->float('volume');
             $table->string('location');
             $table->float('diameter');
