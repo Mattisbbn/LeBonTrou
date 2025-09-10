@@ -16,7 +16,7 @@
 
             </div>
             <img id="menu-icon" src="{{ asset('images/global/hamburger-icon.svg') }}" class="block md:hidden h-6 w-6">
-z
+
         </div>
 
 
