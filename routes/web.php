@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\Wind;
+use App\Http\Controllers\TrouController;
 
 Route::get('/', function () {
     return view('pages.home.index');
@@ -11,6 +12,8 @@ Route::get('/', function () {
 Route::get('/hlc', function () {
     return view('pages.hlc.index');
 });
+
+Route::get('/products', [TrouController::class, 'index']);
 
 
 Route::get('/api/hlc', function () {

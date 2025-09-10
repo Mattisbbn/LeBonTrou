@@ -23,4 +23,9 @@ class Trou extends Model
     {
         return $this->hasMany(TrouImage::class);
     }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }

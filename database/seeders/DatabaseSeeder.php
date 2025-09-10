@@ -33,7 +33,7 @@ class DatabaseSeeder extends Seeder
 
         TrouImage::factory()->create([
             'trou_id' => 1,
-            'file_path' => 'public/images/trous/TrouLeMans.jpg',
+            'file_path' => '/images/trous/TrouLeMans.jpg',
             'name' => 'Photo du Trou du Mans',
         ]);
 
@@ -56,7 +56,7 @@ class DatabaseSeeder extends Seeder
 
         TrouImage::factory()->create([
             'trou_id' => 2,
-            'file_path' => 'public/images/trous/TrouNoir.jpg',
+            'file_path' => '/images/trous/TrouNoir.jpg',
             'name' => 'Photo du Trou noir',
         ]);
 
@@ -79,7 +79,7 @@ class DatabaseSeeder extends Seeder
 
         TrouImage::factory()->create([
             'trou_id' => 3,
-            'file_path' => 'public/images/trous/TrouSerrure.jpg',
+            'file_path' => '/images/trous/TrouSerrure.jpg',
             'name' => 'Photo du trou de serrure',
         ]);
 
@@ -102,7 +102,7 @@ class DatabaseSeeder extends Seeder
 
         TrouImage::factory()->create([
             'trou_id' => 4,
-            'file_path' => 'public/images/trous/TrouMemoire.jpg',
+            'file_path' => '/images/trous/TrouMemoire.jpg',
             'name' => 'Illustration du trou de mémoire',
         ]);
 
@@ -125,7 +125,7 @@ class DatabaseSeeder extends Seeder
 
         TrouImage::factory()->create([
             'trou_id' => 5,
-            'file_path' => 'public/images/trous/TrouBudget.jpg',
+            'file_path' => '/images/trous/TrouBudget.jpg',
             'name' => 'Illustration du trou dans le budget',
         ]);
 
@@ -148,7 +148,7 @@ class DatabaseSeeder extends Seeder
 
         TrouImage::factory()->create([
             'trou_id' => 6,
-            'file_path' => 'public/images/trous/TrouBadour.jpg',
+            'file_path' => '/images/trous/TrouBadour.jpg',
             'name' => 'Photo du Trou Badour',
         ]);
 
@@ -171,7 +171,7 @@ class DatabaseSeeder extends Seeder
 
         TrouImage::factory()->create([
             'trou_id' => 7,
-            'file_path' => 'public/images/trous/TrouSouris.jpg',
+            'file_path' => '/images/trous/TrouSouris.jpg',
             'name' => 'Photo du trou de souris',
         ]);
 
@@ -183,18 +183,18 @@ class DatabaseSeeder extends Seeder
 
         Trou::factory()->create([
             'id' => 8,
-            'name' => 'L\'Anne Troutrou',
+            'name' => 'L\'Ane Troutrou',
             'category_id' => 8,
             'depth' => 5,
             'volume' => 15,
             'location' => 'Secret',
             'diameter' => 3,
-            'description' => 'L\'anneau Troutrou en personne',
+            'description' => 'L\'Ane Troutrou en personne',
         ]);
 
         TrouImage::factory()->create([
             'trou_id' => 8,
-            'file_path' => 'public/images/trous/AnneTroutrou.jpg',
+            'file_path' => '/images/trous/AnneTroutrou.jpg',
             'name' => 'Illustration du trou d’Anne Troutrou',
         ]);
 

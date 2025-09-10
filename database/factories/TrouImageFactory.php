@@ -16,9 +16,6 @@ class TrouImageFactory extends Factory
      */
     public function definition(): array
     {
-        return [
-            'file_path' => 'images/trous/'.$this->faker->image('public/images/trous',640,480,null,false),
-            'name' => $this->faker->word,
-        ];
+        return [];
     }
 }
