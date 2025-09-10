@@ -33,7 +33,7 @@ class DatabaseSeeder extends Seeder
 
         TrouImage::factory(1)->create([
             'trou_id' => 1,
-            'file_path' => 'images/trou1.jpg',
+            'file_path' => 'public/images/trous/TrouLeMans.jpg',
             'name' => 'Photo du Trou du Mans',
         ]);
     }
