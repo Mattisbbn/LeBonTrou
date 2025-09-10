@@ -13,7 +13,7 @@ jobs:
         with:
           host: ${{ secrets.SERVER_IP }}
           username: ${{ secrets.SERVER_USERNAME }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}  # <-- remplace "password" par "key"
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd ${{ secrets.PROJECT_PATH }}
             sudo git pull
@@ -24,3 +24,4 @@ jobs:
             sudo php artisan view:clear
             sudo php artisan route:clear
             sudo npm run build
+# Changes
