@@ -37,7 +37,7 @@ class DatabaseSeeder extends Seeder
         ]);
         Shipment::factory()->create([
             'trou_id' => 1,
-            'name' => 'Livraison express',
+            'name' => 'Livraison par René la taupe express',
             'time_to_ship' => 1,
         ]);
 
@@ -61,13 +61,13 @@ class DatabaseSeeder extends Seeder
         ]);
         Shipment::factory()->create([
             'trou_id' => 2,
-            'name' => 'Livraison galactique express',
-            'time_to_ship' => 0,
+            'name' => 'Livraison standard',
+            'time_to_ship' => 600,
         ]);
         Shipment::factory()->create([
             'trou_id' => 2,
-            'name' => 'Livraison standard',
-            'time_to_ship' => 5,
+            'name' => 'Livraison galactique Express',
+            'time_to_ship' => 0,
         ]);
 
         // 3) Trou de serrure
@@ -91,11 +91,11 @@ class DatabaseSeeder extends Seeder
         Shipment::factory()->create([
             'trou_id' => 3,
             'name' => 'Livraison standard',
-            'time_to_ship' => 2,
+            'time_to_ship' => 3,
         ]);
         Shipment::factory()->create([
             'trou_id' => 3,
-            'name' => 'Livraison express',
+            'name' => 'Livraison par Alice',
             'time_to_ship' => 1,
         ]);
 
@@ -119,13 +119,13 @@ class DatabaseSeeder extends Seeder
         ]);
         Shipment::factory()->create([
             'trou_id' => 4,
-            'name' => 'Livraison standard',
-            'time_to_ship' => 4,
+            'name' => 'Livraison oubliée',
+            'time_to_ship' => 999,
         ]);
         Shipment::factory()->create([
             'trou_id' => 4,
-            'name' => 'Livraison express',
-            'time_to_ship' => 2,
+            'name' => 'Livraison Alzheimer',
+            'time_to_ship' => 999,
         ]);
 
         // 5) Trou dans le budget
@@ -148,13 +148,13 @@ class DatabaseSeeder extends Seeder
         ]);
         Shipment::factory()->create([
             'trou_id' => 5,
-            'name' => 'Livraison standard',
+            'name' => 'Livraison payante',
             'time_to_ship' => 5,
         ]);
         Shipment::factory()->create([
             'trou_id' => 5,
-            'name' => 'Livraison express',
-            'time_to_ship' => 2,
+            'name' => 'Livraison chère',
+            'time_to_ship' => 5,
         ]);
 
         // 6) Trou Badour
@@ -177,12 +177,12 @@ class DatabaseSeeder extends Seeder
         ]);
         Shipment::factory()->create([
             'trou_id' => 6,
-            'name' => 'Livraison standard',
+            'name' => 'Livraison par roulotte',
             'time_to_ship' => 3,
         ]);
         Shipment::factory()->create([
             'trou_id' => 6,
-            'name' => 'Livraison express',
+            'name' => 'Livraison pigeon voyageur',
             'time_to_ship' => 1,
         ]);
 
@@ -206,12 +206,12 @@ class DatabaseSeeder extends Seeder
         ]);
         Shipment::factory()->create([
             'trou_id' => 7,
-            'name' => 'Livraison standard',
+            'name' => 'Livraison par Ratatouille',
             'time_to_ship' => 2,
         ]);
         Shipment::factory()->create([
             'trou_id' => 7,
-            'name' => 'Livraison express',
+            'name' => 'Livraison par les Ratz en personne',
             'time_to_ship' => 1,
         ]);
 
@@ -235,13 +235,13 @@ class DatabaseSeeder extends Seeder
         ]);
         Shipment::factory()->create([
             'trou_id' => 8,
-            'name' => 'Livraison standard',
-            'time_to_ship' => 4,
+            'name' => 'Livraison très lente',
+            'time_to_ship' => 15,
         ]);
         Shipment::factory()->create([
             'trou_id' => 8,
-            'name' => 'Livraison express',
-            'time_to_ship' => 2,
+            'name' => 'Livraison lente',
+            'time_to_ship' => 14,
         ]);
     }
 }

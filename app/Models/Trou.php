@@ -30,4 +30,9 @@ class Trou extends Model
     {
         return $this->belongsTo(Category::class);
     }
+
+    public function shipments()
+    {
+        return $this->hasMany(Shipment::class);
+    }
 }

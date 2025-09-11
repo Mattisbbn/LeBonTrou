@@ -3,13 +3,9 @@
 <div class="max-w-7xl mx-auto px-6 py-8">
         
     <nav id="breadcrumb" class="flex items-center space-x-2 text-sm text-gray-600 mb-8">
-        <span class="hover:text-portal cursor-pointer">Accueil</span>
+        <a href="{{ route('home') }}" class="hover:text-portal-600 cursor-pointer">Accueil</a>
         <i class="text-xs" data-fa-i2svg=""><svg class="svg-inline--fa fa-chevron-right" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"></path></svg></i>
-        <span class="hover:text-portal cursor-pointer">Catalogue</span>
-        <i class="text-xs" data-fa-i2svg=""><svg class="svg-inline--fa fa-chevron-right" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"></path></svg></i>
-        <span class="hover:text-portal cursor-pointer">Trous Cosmiques</span>
-        <i class="text-xs" data-fa-i2svg=""><svg class="svg-inline--fa fa-chevron-right" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"></path></svg></i>
-        <span class="text-void font-semibold">Trou Noir Supermassif</span>
+        <a href="{{ route('products') }}" class="hover:text-portal-600 cursor-pointer">Catalogue</a>
     </nav>
 
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
@@ -24,12 +20,6 @@
                     Vue d'ensemble
                 </div>
             </div>
-            <div class="grid grid-cols-4 gap-2">
-                <img class="w-full h-20 object-cover rounded-lg cursor-pointer border-2 border-portal" src="{{ $trou->images->first()->file_path }}" alt="black hole event horizon close-up, cosmic detail">
-                <img class="w-full h-20 object-cover rounded-lg cursor-pointer hover:border-portal border-2 border-gray-200" src="{{ $trou->images->first()->file_path }}" alt="black hole accretion disk, swirling matter">
-                <img class="w-full h-20 object-cover rounded-lg cursor-pointer hover:border-portal border-2 border-gray-200" src="{{ $trou->images->first()->file_path }}" alt="black hole gravitational lensing effect">
-                <img class="w-full h-20 object-cover rounded-lg cursor-pointer hover:border-portal border-2 border-gray-200" src="{{ $trou->images->first()->file_path }}" alt="black hole jets emission, cosmic phenomenon">
-            </div>
 
             <section id="product-description" class="lg:col-span-2 space-y-8">
                 <div class="bg-white rounded-2xl shadow-lg p-8">
@@ -39,10 +29,18 @@
                             {{ $trou->description}}
                         </p>
                         <h3 class="text-xl font-semibold text-void mb-3">Caractéristiques techniques</h3>
-                        <ul class="space-y-2 text-gray-700">
-                        </ul>
+                        <p class="text-gray-700 mb-4">
+                            Profondeur : {{ $trou->depth}}m
+                        </p>
+                        <p class="text-gray-700 mb-4">
+                            Volume : {{ $trou->volume}}m3
+                        </p>
+                        <p class="text-gray-700 mb-4">
+                            Taille : {{ $trou->diameter}}m
+                        </p>
                         <h3 class="text-xl font-semibold text-void mb-3 mt-6">Utilisations recommandées</h3>
                         <p class="text-gray-700">
+                            {{ $trou->recommended_uses}}
                         </p>
                     </div>
                 </div>
@@ -88,15 +86,15 @@
                         <label class="flex items-center p-3 border border-gray-200 rounded-xl cursor-pointer hover:bg-gray-50">
                             <input type="radio" name="delivery" class="mr-3" checked="">
                             <div class="flex-1">
-                                <p class="font-semibold">Téléportation Quantique</p>
-                                <p class="text-sm text-gray-600">Livraison instantanée - Gratuit</p>
+                                <p class="font-semibold">{{ $trou->shipments->first()->name }}</p>
+                                <p class="text-sm text-gray-600">Délai: {{ $trou->shipments->first()->time_to_ship }} jours - Gratuit</p>
                             </div>
                         </label>
                         <label class="flex items-center p-3 border border-gray-200 rounded-xl cursor-pointer hover:bg-gray-50">
                             <input type="radio" name="delivery" class="mr-3">
                             <div class="flex-1">
-                                <p class="font-semibold">Transport Spatial</p>
-                                <p class="text-sm text-gray-600">Délai: 2-3 milliards d'années - 500 HLC</p>
+                                <p class="font-semibold">{{ $trou->shipments->last()->name }}</p>
+                                <p class="text-sm text-gray-600">Délai: {{ $trou->shipments->last()->time_to_ship }} jours - {{ $trou->shipments->last()->price }} HLC</p>
                             </div>
                         </label>
                     </div>
