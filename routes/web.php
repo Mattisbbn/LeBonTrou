@@ -16,7 +16,4 @@ Route::get('/hlc', function () {
 Route::get('/products', [TrouController::class, 'index'])->name('products');
 Route::get('/products/{id}', [TrouController::class, 'show'])->name('products.show');
 
-
-
-
 Route::get('/api/hlc', [CurrencyController::class, 'getPrice']);
