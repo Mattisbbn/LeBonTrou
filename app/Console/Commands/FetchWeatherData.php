@@ -66,7 +66,7 @@ class FetchWeatherData extends Command
                 return Command::FAILURE;
             }
 
-            $timestamp = now()->setTimestamp($dt);
+            $timestamp = now();
 
             $price = 923 * $speed;
             $price /= 7;
