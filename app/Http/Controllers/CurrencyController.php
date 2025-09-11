@@ -13,8 +13,8 @@ class CurrencyController extends Controller
 
         $priceHistory = $data->map(function (Currency $item) {
             return [
-                'price' => $item->price,
-                'timestamp' => $item->created_at
+                'price' => round($item->price, 2),
+                'timestamp' => $item->created_at->format('Y-m-d H:i')
             ];
         })->sortBy('timestamp')->values();
 

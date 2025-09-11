@@ -11,8 +11,8 @@
                         <a href="{{ route('hlc') }}" class="ms-2 bg-portal px-8 py-4 rounded-md  font-semibold border sm:text-lg text-sm border-white hover:bg-white hover:text-void-950 transition-colors">Cours HoleyCoin</a>
                     </div>
                 </div>
-                <div class="relative xl:w-2/5 lg:w-2/6 md:w-4/5 w-full">
-                    <img class="w-full h-96 object-cover rounded-2xl shadow-2xl" src="{{ asset('images/home/blackhole.webp') }}">
+                <div class="relative xl:w-2/5 lg:w-2/6 md:w-4/5 w-full hidden md:block">
+                    <img class="w-full h-96 object-cover rounded-2xl shadow-2xl"  src="{{ asset('images/home/blackhole.webp') }}">
                     <div class="absolute -top-4 -right-4 bg-quantum-900 px-4 py-2 rounded-lg">
                         <span class="text-sm font-semibold" contenteditable="false">Certifié Quantique</span>
                     </div>
