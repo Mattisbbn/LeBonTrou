@@ -72,9 +72,10 @@ class FetchWeatherData extends Command
             $price /= 7;
             $price /= 150;
 
+
             Currency::create([
                 'timestamp' => $timestamp,
-                'price' => $price,
+                'price' => round($price, 2),
             ]);
 
             $this->info('Vent enregistré: ' . $speed . ' (' . $timestamp->toDateTimeString() . ')');
