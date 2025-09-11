@@ -16,6 +16,8 @@ class Trou extends Model
         'location',
         'diameter',
         'description',
+        'category_id',
+        'recommended_uses',
     ];
 
     // Relation avec les images
@@ -27,5 +29,10 @@ class Trou extends Model
     public function category()
     {
         return $this->belongsTo(Category::class);
+    }
+
+    public function shipments()
+    {
+        return $this->hasMany(Shipment::class);
     }
 }
