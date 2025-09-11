@@ -1,7 +1,9 @@
 <x-layouts.guest>
 
+
+
 <div class="max-w-5xl mx-auto px-6 py-8">
-        
+
     <nav id="breadcrumb" class="flex items-center space-x-2 text-sm text-gray-600 mb-8">
         <a href="{{ route('home') }}" class="hover:text-portal-600 cursor-pointer">Accueil</a>
         <i class="text-xs" data-fa-i2svg=""><svg class="svg-inline--fa fa-chevron-right" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"></path></svg></i>
@@ -17,36 +19,36 @@
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        
+
         <section id="order-details" class="lg:col-span-2 space-y-6">
-            
+
             <div class="bg-white rounded-2xl shadow-lg p-8">
                 <h2 class="text-2xl font-bold text-void mb-6 flex items-center">
                     <i class="text-portal mr-3" data-fa-i2svg=""><svg class="svg-inline--fa fa-bag-shopping" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bag-shopping" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M160 112c0-35.3 28.7-64 64-64s64 28.7 64 64v48H160V112zm-48 48H48c-26.5 0-48 21.5-48 48V416c0 53 43 96 96 96H352c53 0 96-43 96-96V208c0-26.5-21.5-48-48-48H336V112C336 50.1 285.9 0 224 0S112 50.1 112 112v48zm24 48a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm152 24a24 24 0 1 1 48 0 24 24 0 1 1 -48 0z"></path></svg></i>
                     Détails du produit
                 </h2>
                 <div class="flex items-start space-x-6">
-                    <img class="w-32 h-32 object-cover rounded-xl" src="{{ $cart[0]['image'] }}" alt="black hole in space with event horizon, cosmic void, scientific visualization">
+                    <img class="w-32 h-32 object-cover rounded-xl" src="{{ $trou->images->first()->file_path }}" alt="black hole in space with event horizon, cosmic void, scientific visualization">
                     <div class="flex-1">
-                        <h3 class="text-xl font-bold text-void mb-2">{{ $cart[0]['name'] }}</h3>
+                        <h3 class="text-xl font-bold text-void mb-2">{{ $trou['name'] }}</h3>
                         <div class="space-y-2 text-sm">
                             <div class="flex justify-between">
                                 <span class="text-gray-600">Masse:</span>
-                                <span class="font-semibold">{{ $cart[0]['price'] }}</span>
+                                <span class="font-semibold">{{ $trou['price'] }}</span>
                             </div>
                             <div class="flex justify-between">
                                 <span class="text-gray-600">Catégorie:</span>
-                                <span class="font-semibold">{{ $cart[0]['category'] }}</span>
+                                <span class="font-semibold">{{ $trou['category'] }}</span>
                             </div>
                             <div class="flex justify-between">
                                 <span class="text-gray-600">Livraison:</span>
-                                <span class="font-semibold">{{ $cart[0]['delivery'] }}</span>
+                                <span class="font-semibold">{{ $trou['delivery'] }}</span>
                             </div>
                         </div>
                     </div>
                     <div class="text-right">
-                        <p class="text-sm text-gray-500 line-through">{{ $cart[0]['price'] }}</p>
-                        <p class="text-2xl font-bold text-portal">{{ $cart[0]['price'] }}</p>
+                        <p class="text-sm text-gray-500 line-through">{{ $trou['price'] }}</p>
+                        <p class="text-2xl font-bold text-portal">{{ $trou['price'] }}</p>
                         <p class="text-green-600 text-sm font-semibold">-23% de réduction</p>
                     </div>
                 </div>
@@ -106,7 +108,7 @@
         </section>
 
         <section id="payment-summary" class="space-y-6">
-            
+
             <div class="bg-white rounded-2xl shadow-lg p-8">
                 <h2 class="text-2xl font-bold text-void mb-6 flex items-center">
                     <i class="text-portal mr-3" data-fa-i2svg=""><svg class="svg-inline--fa fa-calculator" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="calculator" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64H64zM96 64H288c17.7 0 32 14.3 32 32v32c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V96c0-17.7 14.3-32 32-32zm32 160a32 32 0 1 1 -64 0 32 32 0 1 1 64 0zM96 352a32 32 0 1 1 0-64 32 32 0 1 1 0 64zM64 416c0-17.7 14.3-32 32-32h96c17.7 0 32 14.3 32 32s-14.3 32-32 32H96c-17.7 0-32-14.3-32-32zM192 256a32 32 0 1 1 0-64 32 32 0 1 1 0 64zm32 64a32 32 0 1 1 -64 0 32 32 0 1 1 64 0zm64-64a32 32 0 1 1 0-64 32 32 0 1 1 0 64zm32 64a32 32 0 1 1 -64 0 32 32 0 1 1 64 0zM288 448a32 32 0 1 1 0-64 32 32 0 1 1 0 64z"></path></svg></i>

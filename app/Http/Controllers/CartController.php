@@ -30,13 +30,11 @@ class CartController extends Controller
         return redirect()->route('cart.index');
     }
 
-    public function index()
+    public function index($id)
     {
-        $cart = session()->get('cart', []);
-        $total = collect($cart)->sum(function($item) {
-            return $item['price'] * $item['quantity'];
-        });
+        $trou = Trou::findOrFail($id);
 
-        return view('pages.cart.index', compact('cart', 'total'));
+
+        return view('pages.cart.index', compact('trou'));
     }
 }
