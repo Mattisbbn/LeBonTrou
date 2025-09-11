@@ -21,3 +21,4 @@ Route::get('/api/hlc', [CurrencyController::class, 'getPrice']);
 
 Route::get('/checkout/{id}', [CartController::class, 'index'])->name('checkout');
 
+

@@ -13,6 +13,7 @@ class Shipment extends Model
         'trou_id',
         'name',
         'time_to_ship',
+        'price',
     ];
 
     public function trou()

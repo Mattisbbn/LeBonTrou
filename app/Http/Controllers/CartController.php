@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Trou;
+use App\Models\Shipment;
 
 class CartController extends Controller
 {
@@ -30,11 +31,27 @@ class CartController extends Controller
         return redirect()->route('cart.index');
     }
 
-    public function index($id)
+    public function index(Request $request, $id)
     {
+        $shipmentId = $request->query('shipment_id');
+
+        if (!$shipmentId) {
+            return back()->withErrors(['shipment_id' => 'Veuillez choisir une option de livraison']);
+        }
+    
         $trou = Trou::findOrFail($id);
+        $shipment = Shipment::findOrFail($shipmentId);
 
-
-        return view('pages.cart.index', compact('trou'));
+        $price = \App\Models\Currency::latest()->first()->price;
+        $calculatedPrice = ($trou->volume + $trou->depth / $trou->diameter) ;
+        $calculatedPrice = round($calculatedPrice, 2);
+    
+        // Ici tu peux stocker dans ton panier ou passer à la vue checkout
+        // Exemple :
+        return view('pages.cart.index', [
+            'trou' => $trou,
+            'shipment' => $shipment,
+            'calculatedPrice' => $calculatedPrice,
+        ]);
     }
 }

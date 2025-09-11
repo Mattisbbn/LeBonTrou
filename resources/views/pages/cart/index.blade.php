@@ -1,7 +1,5 @@
 <x-layouts.guest>
 
-
-
 <div class="max-w-5xl mx-auto px-6 py-8">
 
     <nav id="breadcrumb" class="flex items-center space-x-2 text-sm text-gray-600 mb-8">
@@ -25,31 +23,29 @@
             <div class="bg-white rounded-2xl shadow-lg p-8">
                 <h2 class="text-2xl font-bold text-void mb-6 flex items-center">
                     <i class="text-portal mr-3" data-fa-i2svg=""><svg class="svg-inline--fa fa-bag-shopping" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bag-shopping" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M160 112c0-35.3 28.7-64 64-64s64 28.7 64 64v48H160V112zm-48 48H48c-26.5 0-48 21.5-48 48V416c0 53 43 96 96 96H352c53 0 96-43 96-96V208c0-26.5-21.5-48-48-48H336V112C336 50.1 285.9 0 224 0S112 50.1 112 112v48zm24 48a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm152 24a24 24 0 1 1 48 0 24 24 0 1 1 -48 0z"></path></svg></i>
-                    Détails du produit
+                    Détails du trou
                 </h2>
                 <div class="flex items-start space-x-6">
                     <img class="w-32 h-32 object-cover rounded-xl" src="{{ $trou->images->first()->file_path }}" alt="black hole in space with event horizon, cosmic void, scientific visualization">
                     <div class="flex-1">
-                        <h3 class="text-xl font-bold text-void mb-2">{{ $trou['name'] }}</h3>
+                        <h3 class="text-xl font-bold text-void mb-2">{{ $trou->name }}</h3>
                         <div class="space-y-2 text-sm">
                             <div class="flex justify-between">
-                                <span class="text-gray-600">Masse:</span>
-                                <span class="font-semibold">{{ $trou['price'] }}</span>
+                                <span class="text-gray-600">Profondeur:</span>
+                                <span class="font-semibold">{{ $trou->depth }}m</span>
                             </div>
                             <div class="flex justify-between">
                                 <span class="text-gray-600">Catégorie:</span>
-                                <span class="font-semibold">{{ $trou['category'] }}</span>
+                                <span class="font-semibold">{{ $trou->category->name }}</span>
                             </div>
                             <div class="flex justify-between">
                                 <span class="text-gray-600">Livraison:</span>
-                                <span class="font-semibold">{{ $trou['delivery'] }}</span>
+                                <span class="font-semibold">{{ $shipment->name }}</span>
                             </div>
                         </div>
                     </div>
                     <div class="text-right">
-                        <p class="text-sm text-gray-500 line-through">{{ $trou['price'] }}</p>
-                        <p class="text-2xl font-bold text-portal">{{ $trou['price'] }}</p>
-                        <p class="text-green-600 text-sm font-semibold">-23% de réduction</p>
+                        <p class="text-portal-600 text-2xl font-bold text-portal">{{$calculatedPrice}} HLC</p>
                     </div>
                 </div>
             </div>
@@ -57,11 +53,11 @@
             <div class="bg-white rounded-2xl shadow-lg p-8">
                 <h2 class="text-2xl font-bold text-void mb-6 flex items-center">
                     <i class="text-portal mr-3" data-fa-i2svg=""><svg class="svg-inline--fa fa-chart-line" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chart-line" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M64 64c0-17.7-14.3-32-32-32S0 46.3 0 64V400c0 44.2 35.8 80 80 80H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H80c-8.8 0-16-7.2-16-16V64zm406.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L320 210.7l-57.4-57.4c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L240 221.3l57.4 57.4c12.5 12.5 32.8 12.5 45.3 0l128-128z"></path></svg></i>
-                    Cours HoleyCoin en temps réel
+                    Cours du HoleyCoin en temps réel
                 </h2>
                 <div id="hlc-main-chart" class="h-64 mb-4" data-highcharts-chart="0" style="overflow: hidden;"><div id="highcharts-r8ei4ke-0" dir="ltr" style="position: relative; overflow: hidden; width: 576px; height: 250px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); user-select: none; touch-action: manipulation; outline: none; padding: 0px;" class="highcharts-container "><svg version="1.1" class="highcharts-root" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, sans-serif; font-size: 1rem;" xmlns="http://www.w3.org/2000/svg" width="576" height="250" viewBox="0 0 576 250" role="img" aria-label=""><desc>Created with Highcharts 12.4.0</desc><defs><filter id="highcharts-drop-shadow-0"><feDropShadow dx="1" dy="1" flood-color="#000000" flood-opacity="0.75" stdDeviation="2.5"></feDropShadow></filter><clipPath id="highcharts-r8ei4ke-11-"><rect x="0" y="0" width="497" height="193" fill="none"></rect></clipPath><linearGradient x1="0" y1="0" x2="0" y2="1" id="highcharts-r8ei4ke-14"><stop offset="0" stop-color="rgb(37,99,235)" stop-opacity="0.3"></stop><stop offset="1" stop-color="rgb(37,99,235)" stop-opacity="0.05"></stop></linearGradient></defs><rect fill="transparent" class="highcharts-background" filter="none" x="0" y="0" width="576" height="250" rx="0" ry="0"></rect><rect fill="none" class="highcharts-plot-background" x="69" y="10" width="497" height="193" filter="none"></rect><g class="highcharts-grid highcharts-xaxis-grid" data-z-index="1"><path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 107.5 10 L 107.5 203" opacity="1"></path><path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 188.5 10 L 188.5 203" opacity="1"></path><path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 269.5 10 L 269.5 203" opacity="1"></path><path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 351.5 10 L 351.5 203" opacity="1"></path><path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 432.5 10 L 432.5 203" opacity="1"></path><path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 513.5 10 L 513.5 203" opacity="1"></path></g><g class="highcharts-grid highcharts-yaxis-grid" data-z-index="1"><path fill="none" stroke="#f3f4f6" stroke-width="1" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 69 203.5 L 566 203.5" opacity="1"></path><path fill="none" stroke="#f3f4f6" stroke-width="1" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 69 138.5 L 566 138.5" opacity="1"></path><path fill="none" stroke="#f3f4f6" stroke-width="1" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 69 74.5 L 566 74.5" opacity="1"></path><path fill="none" stroke="#f3f4f6" stroke-width="1" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 69 10.5 L 566 10.5" opacity="1"></path></g><rect fill="none" class="highcharts-plot-border" data-z-index="1" stroke="#cccccc" stroke-width="0" x="69" y="10" width="497" height="193"></rect><g class="highcharts-axis highcharts-xaxis" data-z-index="2"><path fill="none" class="highcharts-tick" stroke="#e5e7eb" stroke-width="1" d="M 107.5 203 L 107.5 213" opacity="1"></path><path fill="none" class="highcharts-tick" stroke="#e5e7eb" stroke-width="1" d="M 188.5 203 L 188.5 213" opacity="1"></path><path fill="none" class="highcharts-tick" stroke="#e5e7eb" stroke-width="1" d="M 269.5 203 L 269.5 213" opacity="1"></path><path fill="none" class="highcharts-tick" stroke="#e5e7eb" stroke-width="1" d="M 351.5 203 L 351.5 213" opacity="1"></path><path fill="none" class="highcharts-tick" stroke="#e5e7eb" stroke-width="1" d="M 432.5 203 L 432.5 213" opacity="1"></path><path fill="none" class="highcharts-tick" stroke="#e5e7eb" stroke-width="1" d="M 513.5 203 L 513.5 213" opacity="1"></path><path fill="none" class="highcharts-axis-line" stroke="#e5e7eb" stroke-width="1" data-z-index="7" d="M 69 203.5 L 566 203.5"></path></g><g class="highcharts-axis highcharts-yaxis" data-z-index="2"><text x="26.32501220703125" data-z-index="7" text-anchor="middle" transform="translate(0,0) rotate(270 26.32501220703125 106.5)" class="highcharts-axis-title" style="font-size: 0.8em; fill: rgb(107, 114, 128);" y="106.5">Prix (€)</text><path fill="none" class="highcharts-axis-line" stroke="#333333" stroke-width="0" data-z-index="7" d="M 69 10 L 69 203"></path></g><g class="highcharts-series-group" data-z-index="3" filter="none"><g class="highcharts-series highcharts-series-0 highcharts-area-series" data-z-index="0.1" opacity="1" transform="translate(69,10) scale(1 1)" clip-path="url(#highcharts-r8ei4ke-11-)"><path fill="url(#highcharts-r8ei4ke-14)" d="M 4.8725490196078 40.658666666667 L 86.081699346405 38.857333333333 L 167.2908496732 44.261333333333 L 248.5 35.640666666667 L 329.7091503268 29.979333333333 L 410.91830065359 34.225333333333 L 492.12745098039 32.552666666667 L 492.12745098039 193 L 410.91830065359 193 L 329.7091503268 193 L 248.5 193 L 167.2908496732 193 L 86.081699346405 193 L 4.8725490196078 193 Z" class="highcharts-area" data-z-index="0" fill-opacity="1" style="pointer-events: none;"></path><path fill="none" d="M 4.8725490196078 40.658666666667 L 86.081699346405 38.857333333333 L 167.2908496732 44.261333333333 L 248.5 35.640666666667 L 329.7091503268 29.979333333333 L 410.91830065359 34.225333333333 L 492.12745098039 32.552666666667" class="highcharts-graph" data-z-index="1" stroke="#2563eb" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" filter="none"></path><path fill="none" d="M 4.8725490196078 40.658666666667 L 86.081699346405 38.857333333333 L 167.2908496732 44.261333333333 L 248.5 35.640666666667 L 329.7091503268 29.979333333333 L 410.91830065359 34.225333333333 L 492.12745098039 32.552666666667" data-z-index="2" class="highcharts-tracker-line" stroke-linecap="round" stroke-linejoin="round" stroke="rgba(192,192,192,0.0001)" stroke-width="22"></path></g><g class="highcharts-markers highcharts-series-0 highcharts-area-series highcharts-tracker" data-z-index="0.1" opacity="1" transform="translate(69,10) scale(1 1)" clip-path="none"><path fill="#2563eb" d="M 4.5 42.658666666667 A 2 2 0 1 1 4.5001999999996665 42.658666656667 Z" stroke="#ffffff" stroke-width="0" opacity="1" class="highcharts-point"></path><path fill="#2563eb" d="M 86.5 40.857333333333 A 2 2 0 1 1 86.50019999999967 40.857333323333 Z" stroke="#ffffff" stroke-width="0" opacity="1" class="highcharts-point"></path><path fill="#2563eb" d="M 167.5 46.261333333333 A 2 2 0 1 1 167.50019999999967 46.261333323333 Z" stroke="#ffffff" stroke-width="0" opacity="1" class="highcharts-point"></path><path fill="#2563eb" d="M 248.5 37.640666666667 A 2 2 0 1 1 248.50019999999967 37.640666656667 Z" stroke="#ffffff" stroke-width="0" opacity="1" class="highcharts-point"></path><path fill="#2563eb" d="M 329.5 31.979333333333 A 2 2 0 1 1 329.50019999999967 31.979333323332998 Z" stroke="#ffffff" stroke-width="0" opacity="1" class="highcharts-point"></path><path fill="#2563eb" d="M 410.5 36.225333333333 A 2 2 0 1 1 410.50019999999967 36.225333323333 Z" stroke="#ffffff" stroke-width="0" opacity="1" class="highcharts-point"></path><path fill="#2563eb" d="M 492.5 34.552666666667 A 2 2 0 1 1 492.50019999999967 34.552666656667 Z" stroke="#ffffff" stroke-width="0" opacity="1" class="highcharts-point"></path></g></g><text x="288" class="highcharts-title" data-z-index="4" text-align="center" y="25" text-anchor="middle" transform-origin="10 22" transform="translate(0,0) scale(1 1)" style="font-size: 1.2em; font-weight: bold; fill: rgb(51, 51, 51);"></text><text x="288" class="highcharts-subtitle" data-z-index="4" text-align="center" y="24" text-anchor="middle" transform-origin="10 15" transform="translate(0,0) scale(1 1)" style="font-size: 0.8em; fill: rgb(102, 102, 102);"></text><text x="10" text-anchor="start" class="highcharts-caption" data-z-index="4" style="font-size: 0.8em; fill: rgb(102, 102, 102);" text-align="left" y="247" transform-origin="10 15" transform="translate(0,0) scale(1 1)"></text><g class="highcharts-datalabels-group" data-z-index="6"></g><g class="highcharts-axis-labels highcharts-xaxis-labels" data-z-index="7"><text x="107.45110588008" text-anchor="middle" transform="translate(0,0)" style="cursor: default; font-size: 0.8em; fill: rgb(51, 51, 51);" y="230" opacity="1">12:00</text><text x="188.66025620688" text-anchor="middle" transform="translate(0,0)" style="cursor: default; font-size: 0.8em; fill: rgb(51, 51, 51);" y="230" opacity="1">16:00</text><text x="269.86940653368" text-anchor="middle" transform="translate(0,0)" style="cursor: default; font-size: 0.8em; fill: rgb(51, 51, 51);" y="230" opacity="1">20:00</text><text x="351.07855686048" text-anchor="middle" transform="translate(0,0)" style="cursor: default; font-size: 0.8em; fill: rgb(51, 51, 51);" y="230" opacity="1">11 sept.</text><text x="432.28770718727" text-anchor="middle" transform="translate(0,0)" style="cursor: default; font-size: 0.8em; fill: rgb(51, 51, 51);" y="230" opacity="1">04:00</text><text x="513.49685751407" text-anchor="middle" transform="translate(0,0)" style="cursor: default; font-size: 0.8em; fill: rgb(51, 51, 51);" y="230" opacity="1">08:00</text></g><g class="highcharts-axis-labels highcharts-yaxis-labels" data-z-index="7"><text x="54" text-anchor="end" transform="translate(0,0)" style="cursor: default; font-size: 0.8em; fill: rgb(51, 51, 51);" y="207" opacity="1">0</text><text x="54" text-anchor="end" transform="translate(0,0)" style="cursor: default; font-size: 0.8em; fill: rgb(51, 51, 51);" y="142" opacity="1">0,5</text><text x="54" text-anchor="end" transform="translate(0,0)" style="cursor: default; font-size: 0.8em; fill: rgb(51, 51, 51);" y="78" opacity="1">1</text><text x="54" text-anchor="end" transform="translate(0,0)" style="cursor: default; font-size: 0.8em; fill: rgb(51, 51, 51);" y="14" opacity="1">1,5</text></g></svg></div></div>
                 <div class="grid grid-cols-3 gap-4 text-center">
-                    <div class="bg-gray-50 rounded-lg p-4">
+                     <div class="bg-gray-50 rounded-lg p-4">
                         <p class="text-sm text-gray-600">Prix actuel</p>
                         <p class="text-xl font-bold text-portal">1.247 €</p>
                     </div>
@@ -72,7 +68,7 @@
                     <div class="bg-gray-50 rounded-lg p-4">
                         <p class="text-sm text-gray-600">Volume</p>
                         <p class="text-xl font-bold text-gray-800">1.2M HLC</p>
-                    </div>
+                    </div> 
                 </div>
             </div>
 
@@ -97,10 +93,14 @@
                         <div class="bg-gray-50 rounded-lg p-4">
                             <div class="flex items-center space-x-3 mb-2">
                                 <i class="text-portal" data-fa-i2svg=""><svg class="svg-inline--fa fa-rocket" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="rocket" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M156.6 384.9L125.7 354c-8.5-8.5-11.5-20.8-7.7-32.2c3-8.9 7-20.5 11.8-33.8L24 288c-8.6 0-16.6-4.6-20.9-12.1s-4.2-16.7 .2-24.1l52.5-88.5c13-21.9 36.5-35.3 61.9-35.3l82.3 0c2.4-4 4.8-7.7 7.2-11.3C289.1-4.1 411.1-8.1 483.9 5.3c11.6 2.1 20.6 11.2 22.8 22.8c13.4 72.9 9.3 194.8-111.4 276.7c-3.5 2.4-7.3 4.8-11.3 7.2v82.3c0 25.4-13.4 49-35.3 61.9l-88.5 52.5c-7.4 4.4-16.6 4.5-24.1 .2s-12.1-12.2-12.1-20.9V380.8c-14.1 4.9-26.4 8.9-35.7 11.9c-11.2 3.6-23.4 .5-31.8-7.8zM384 168a40 40 0 1 0 0-80 40 40 0 1 0 0 80z"></path></svg></i>
-                                <span class="font-semibold">Téléportation Quantique</span>
+                                <span class="font-semibold">{{ $shipment->name }}</span>
                             </div>
                             <p class="text-sm text-gray-600">Livraison instantanée via tunnel de ver certifié</p>
-                            <p class="text-sm text-green-600 font-semibold mt-2">GRATUIT</p>
+                            @if ($shipment->price > 0)
+                                <p class="text-sm text-green-600 font-semibold mt-2">{{ $shipment->price }} HLC</p>
+                            @else
+                                <p class="text-sm text-green-600 font-semibold mt-2">GRATUIT</p>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -117,30 +117,20 @@
                 <div class="space-y-4">
                     <div class="flex justify-between items-center">
                         <span class="text-gray-600">Prix du produit</span>
-                        <span class="font-semibold">3,200 HLC</span>
-                    </div>
-                    <div class="flex justify-between items-center text-green-600">
-                        <span>Réduction (-23%)</span>
-                        <span class="font-semibold">-750 HLC</span>
+                        <span class="font-semibold">{{ $calculatedPrice }} HLC</span>
                     </div>
                     <div class="flex justify-between items-center">
                         <span class="text-gray-600">Sous-total</span>
-                        <span class="font-semibold">2,450 HLC</span>
+                        <span class="font-semibold">{{ $calculatedPrice }} HLC</span>
+                    </div>
+                    <div class="flex justify-between items-center text-red-600">
+                        <span>Livraison </span>
+                        <span class="font-semibold">{{ $shipment->price }} HLC</span>
                     </div>
                     <div class="flex justify-between items-center">
-                        <span class="text-gray-600">Livraison</span>
-                        <span class="font-semibold text-green-600">Gratuit</span>
+                        <span class="text-gray-600">Total</span>
+                        <span class="font-semibold">{{ $calculatedPrice + $shipment->price }} HLC</span>
                     </div>
-                    <div class="flex justify-between items-center">
-                        <span class="text-gray-600">Taxes quantiques</span>
-                        <span class="font-semibold">245 HLC</span>
-                    </div>
-                    <hr class="border-gray-200">
-                    <div class="flex justify-between items-center text-xl font-bold">
-                        <span class="text-void">Total</span>
-                        <span class="text-portal">2,695 HLC</span>
-                    </div>
-                    <p class="text-sm text-gray-600 text-center">≈ 3,361.85 € au cours actuel</p>
                 </div>
             </div>
 

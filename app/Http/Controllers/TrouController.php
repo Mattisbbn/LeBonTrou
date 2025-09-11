@@ -43,5 +43,4 @@ class TrouController extends Controller
 
         return view('pages.products.show', compact('trou', 'calculatedPrice', 'price'));
     }
-
 }
