@@ -2,39 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Wind;
+use App\Models\Currency;
 use Illuminate\Http\Request;
 
 class CurrencyController extends Controller
 {
     public function getPrice()
     {
-        $getPrice = function ($speed, $timestamp) {
-            $price = 923 * $speed;
-            $price /= 7;
-            $price /= 150;
+        $data = Currency::all();
+
+        $priceHistory = $data->map(function (Currency $item) {
             return [
-                'price' => round($price, 2),
-                'timestamp' => $timestamp
+                'price' => $item->price,
+                'timestamp' => $item->timestamp
             ];
-        };
-
-        $data = Wind::all();
-        $currentSpeed = $data->last()->speed;
-        $currentPrice = $getPrice($currentSpeed,$data->last()->timestamp);
-
-        $priceHistory = $data->map(function (Wind $item) use ($getPrice) {
-            return $getPrice($item->speed,$item->timestamp);
         })->sortBy('timestamp')->values();
 
 
-
-
-
-
         return response()->json([
-          'priceHistory' => $priceHistory,
-          'price' => $currentPrice
+          'priceHistory' => $priceHistory
         ]);
     }
 }
