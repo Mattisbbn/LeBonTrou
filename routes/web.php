@@ -19,5 +19,5 @@ Route::get('/products/{id}', [TrouController::class, 'show'])->name('products.sh
 
 Route::get('/api/hlc', [CurrencyController::class, 'getPrice']);
 
-Route::get('/cart', [CartController::class, 'index'])->name('cart');
+Route::get('/checkout/{id}', [CartController::class, 'index'])->name('checkout');
 
