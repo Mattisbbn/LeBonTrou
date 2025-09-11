@@ -66,20 +66,11 @@
 
             <div class="bg-white rounded-2xl p-6 shadow-lg">
                 <div class="flex items-center justify-between mb-4">
-                    <span class="text-5xl font-bold text-portal-600">51511520 HLC</span>
+                    <span class="text-5xl font-bold text-portal-600">{{ $calculatedPrice }} HLC</span>
                 </div>
             </div>
 
             <div class="space-y-4">
-                {{-- <div>
-                    <label class="block text-sm font-semibold text-void mb-2">Masse (en masses solaires)</label>
-                    <select class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-portal focus:border-transparent">
-                        <option>4,3 millions (Standard) - 2,450 HLC</option>
-                        <option>10 millions (Grande taille) - 4,200 HLC</option>
-                        <option>50 millions (Géant) - 15,800 HLC</option>
-                    </select>
-                </div> --}}
-                
                 <div>
                     <label class="block text-sm font-semibold text-void mb-2">Options de livraison</label>
                     <div class="space-y-2">
