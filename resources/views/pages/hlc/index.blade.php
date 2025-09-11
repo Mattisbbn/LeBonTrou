@@ -22,22 +22,21 @@
         </div>
 
         <div class="flex flex-col shadow-2xl rounded-2xl p-4 mt-6">
-            <div>
-                <button id="1D" class="px-4 py-2 bg-gray-100 text-gray-600 rounded-lg text-sm font-medium hover:bg-gray-200" >1J</button>
-                <button id="7D" class="px-4 py-2 bg-gray-100 text-gray-600 rounded-lg text-sm font-medium hover:bg-gray-200" >7J</button>
-                <button id="1M" class="px-4 py-2 bg-gray-100 text-gray-600 rounded-lg text-sm font-medium hover:bg-gray-200" >1M</button>
-            </div>
+            <div class="flex items-center justify-between">
+                <h2 class="text-2xl font-bold" contenteditable="false">Évolution du Prix HLC
+                </h2>
 
+                <div>
+                    <button id="1D"
+                        class="px-4 py-2 bg-gray-100 text-gray-600 rounded-lg text-sm font-medium hover:bg-gray-200">1J</button>
+                    <button id="7D"
+                        class="px-4 py-2 bg-gray-100 text-gray-600 rounded-lg text-sm font-medium hover:bg-gray-200">7J</button>
+                    <button id="1M"
+                        class="px-4 py-2 bg-gray-100 text-gray-600 rounded-lg text-sm font-medium hover:bg-gray-200">1M</button>
+                </div>
+            </div>
             <canvas id="monnaieChart"></canvas>
         </div>
     </main>
-
-
-
-
-
-
-
-
 
 </x-layouts.guest>

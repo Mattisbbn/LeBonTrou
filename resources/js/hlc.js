@@ -11,7 +11,12 @@ function getCSRFToken() {
     );
 }
 
+let hlcData = null;
+
 async function fetchData() {
+    if (hlcData) {
+        return hlcData;
+    }
     const response = await fetch("/api/hlc", {
         method: "GET",
         headers: {
@@ -21,6 +26,7 @@ async function fetchData() {
         },
     });
     const data = await response.json();
+    hlcData = data;
     return data;
 }
 
