@@ -7,8 +7,10 @@
                         <h1 class="2xl:text-6xl sm:text-5xl  text-4xl   font-bold">Le trou n'est plus une<span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-ribbon-700 to-medium-purple-500"><br>absence de matière</span></h1>
                         <p class="2xl:text-2xl sm:text-xl  text-lg  my-4">C'est une ressource stratégique.</p>
                         <p class="text-white/75 2xl:text-xl sm:text-lg text-base mt-6">Découvrez le premier marché mondial de trous certifiés. <br> De la singularité cosmique au simple trou de serrure.</p>
+                        <div class="flex flex-wrap gap-2">
                         <a href="{{ route('products') }}" class="bg-portal-600 px-8 py-4 rounded-md  font-semibold hover:bg-blue-700 transition-colors sm:text-lg text-sm">Explorer le catalogue</a>
-                        <a href="{{ route('hlc') }}" class="ms-2 bg-portal px-8 py-4 rounded-md  font-semibold border sm:text-lg text-sm border-white hover:bg-white hover:text-void-950 transition-colors">Cours HoleyCoin</a>
+                        <a href="{{ route('hlc') }}" class="bg-portal px-8 py-4 rounded-md  font-semibold border sm:text-lg text-sm border-white hover:bg-white hover:text-void-950 transition-colors">Cours HoleyCoin</a>
+                        </div>
                     </div>
                 </div>
                 <div class="relative xl:w-2/5 lg:w-2/6 md:w-4/5 w-full hidden md:block">
