@@ -146,7 +146,7 @@
                         </svg>
                         Ajouter au panier
                     </button>
-
+{{-- test --}}
                 {{-- Bouton "Favori" --}}
                 <button
                     class="inline-flex items-center justify-center px-6 py-4 border-2 border-portal text-portal-600 rounded-xl hover:bg-portal hover:text-red-600 transition-colors">
