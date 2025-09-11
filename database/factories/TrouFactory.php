@@ -24,6 +24,7 @@ class TrouFactory extends Factory
             'diameter' => fake()->randomFloat(2, 0.5, 10),
             'description' => fake()->sentence(),  
             'category_id' => \App\Models\Category::factory(), 
+            'recommended_uses' => fake()->sentence(),
         ];
     }
 }

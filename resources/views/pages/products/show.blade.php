@@ -73,14 +73,14 @@
             </div>
 
             <div class="space-y-4">
-                <div>
+                {{-- <div>
                     <label class="block text-sm font-semibold text-void mb-2">Masse (en masses solaires)</label>
                     <select class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-portal focus:border-transparent">
                         <option>4,3 millions (Standard) - 2,450 HLC</option>
                         <option>10 millions (Grande taille) - 4,200 HLC</option>
                         <option>50 millions (Géant) - 15,800 HLC</option>
                     </select>
-                </div>
+                </div> --}}
                 
                 <div>
                     <label class="block text-sm font-semibold text-void mb-2">Options de livraison</label>

@@ -16,6 +16,8 @@ class Trou extends Model
         'location',
         'diameter',
         'description',
+        'category_id',
+        'recommended_uses',
     ];
 
     // Relation avec les images
