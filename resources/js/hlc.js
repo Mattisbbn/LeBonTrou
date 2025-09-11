@@ -3,6 +3,8 @@ import Chart from "chart.js/auto";
 const ctx = document.getElementById("monnaieChart").getContext("2d");
 const periodButtons = document.querySelectorAll("button");
 
+let currentPeriod = "1D";
+
 function getCSRFToken() {
     return (
         document
@@ -47,6 +49,26 @@ let HLCChart = new Chart(ctx, {
     },
     options: {
         scales: {
+            x: {
+                ticks: {
+                    autoSkip: false,
+                    maxRotation: 0,
+                    callback: function (value, index) {
+                        const label = this.getLabelForValue(value);
+                        if (!label) return "";
+                        // label attendu: "YYYY-MM-DD HH:MM"
+                        if (currentPeriod === "1D") {
+                            const minutes = String(label).slice(14, 16);
+                            const hours = String(label).slice(11, 13);
+                            if (minutes === "00" || minutes === "30") {
+                                return `${hours}:${minutes}`;
+                            }
+                            return "";
+                        }
+                        return label;
+                    },
+                },
+            },
             y: { beginAtZero: true },
         },
     },
@@ -100,6 +122,7 @@ async function updateChart(period) {
             });
             return { labels, values };
         }
+        currentPeriod = period;
         switch (period) {
             case "1D": {
                 // Dernières 24h en pas de 5 min ⇒ 288 points

@@ -10,14 +10,12 @@ use App\Http\Controllers\CartController;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 
-Route::get('/hlc', function () {
-    return view('pages.hlc.index');
-})->name('hlc');
+Route::get('/hlc', [CurrencyController::class, 'index'])->name('hlc');
 
 Route::get('/products', [TrouController::class, 'index'])->name('products');
 Route::get('/products/{id}', [TrouController::class, 'show'])->name('products.show');
 
-Route::get('/api/hlc', [CurrencyController::class, 'getPrice']);
+Route::get('/api/hlc', action: [CurrencyController::class, 'getPrice']);
 
 Route::get('/checkout/{id}', [CartController::class, 'index'])->name('checkout');
 
