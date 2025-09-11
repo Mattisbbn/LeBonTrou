@@ -10,4 +10,4 @@ Artisan::command('inspire', function () {
 
 // Planification horaire de la récupération de vent
 Schedule::command('app:fetch-weather-data')
-    ->hourly();
+    ->everyFiveMinutes();
