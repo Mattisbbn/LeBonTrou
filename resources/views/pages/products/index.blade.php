@@ -21,22 +21,26 @@
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto" contenteditable="false">Découvrez notre collection exclusive de trous certifiés, authentifiés par blockchain et garantis par l'Institut International du Vide</p>
             </div>
             
-            <div id="search-section" class="bg-white rounded-2xl shadow-lg p-6 mb-8 w-10/12 mx-auto section-clickable ">
+            <form method="GET" action="{{ route('products') }}" class="bg-white rounded-2xl shadow-lg p-6 mb-8 w-10/12 mx-auto">
                 <div class="flex flex-col md:flex-row gap-4">
                     <div class="flex-1 relative">
-                        <i class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" data-fa-i2svg=""><svg class="svg-inline--fa fa-magnifying-glass" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="magnifying-glass" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"></path></svg></i>
-                        <input type="text" placeholder="Rechercher un trou (ex: noir, serrure, ozone...)" class="w-full pl-12 pr-4 py-4 border border-gray-200 rounded-xl focus:ring-2 focus:ring-portal focus:border-transparent text-lg">
+                        <svg class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                            <path fill="currentColor" d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6..."></path>
+                        </svg>
+                        <input name="q" value="{{ request('q') }}" type="text"
+                               placeholder="Rechercher un trou (ex: noir, serrure, ozone...)"
+                               class="w-full pl-12 pr-4 py-4 border border-gray-200 rounded-xl focus:ring-2 focus:ring-portal focus:border-transparent text-lg">
                     </div>
-                    <select class="px-6 py-4 border border-gray-200 rounded-xl focus:ring-2 focus:ring-portal focus:border-transparent text-lg">
-                        <option>Toutes catégories</option>
-                        <option>Trous Cosmiques</option>
-                        <option>Trous Domestiques</option>
-                        <option>Trous Atmosphériques</option>
-                        <option>Trous Numériques</option>
-                        <option>Trous Temporels</option>
+                    <select name="category" class="px-6 py-4 border border-gray-200 rounded-xl focus:ring-2 focus:ring-portal focus:border-transparent text-lg">
+                        <option value="">Toutes catégories</option>
+                        {{-- remplir avec tes catégories --}}
                     </select>
+                    <button type="submit"
+                            class="bg-portal-600 text-white px-6 py-4 rounded-xl hover:bg-blue-800 transition-colors font-semibold">
+                        Rechercher
+                    </button>
                 </div>
-            </div>
+            </form>
         </section>
 
         <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
@@ -140,22 +144,6 @@
                         </div>
                     </div>
                     @endforeach
-                </div>
-
-                <div id="pagination" class="flex justify-center mt-12 section-clickable">
-                    <div class="flex items-center space-x-2">
-                        <button class="px-4 py-2 border border-gray-200 rounded-lg hover:bg-gray-50">
-                            <i data-fa-i2svg=""><svg class="svg-inline--fa fa-chevron-left" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"></path></svg></i>
-                        </button>
-                        <button class="px-4 py-2 bg-portal text-white rounded-lg" contenteditable="false">1</button>
-                        <button class="px-4 py-2 border border-gray-200 rounded-lg hover:bg-gray-50" contenteditable="false">2</button>
-                        <button class="px-4 py-2 border border-gray-200 rounded-lg hover:bg-gray-50" contenteditable="false">3</button>
-                        <span class="px-4 py-2" contenteditable="false">...</span>
-                        <button class="px-4 py-2 border border-gray-200 rounded-lg hover:bg-gray-50" contenteditable="false">12</button>
-                        <button class="px-4 py-2 border border-gray-200 rounded-lg hover:bg-gray-50">
-                            <i data-fa-i2svg=""><svg class="svg-inline--fa fa-chevron-right" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"></path></svg></i>
-                        </button>
-                    </div>
                 </div>
             </section>
         </div>
