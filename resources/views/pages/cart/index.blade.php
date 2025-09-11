@@ -26,7 +26,7 @@
                     Détails du trou
                 </h2>
                 <div class="flex items-start space-x-6">
-                    <img class="w-32 h-32 object-cover rounded-xl" src="{{ $trou->image }}" alt="black hole in space with event horizon, cosmic void, scientific visualization">
+                    <img class="w-32 h-32 object-cover rounded-xl" src="{{ $trou->images->first()->file_path }}" alt="black hole in space with event horizon, cosmic void, scientific visualization">
                     <div class="flex-1">
                         <h3 class="text-xl font-bold text-void mb-2">{{ $trou->name }}</h3>
                         <div class="space-y-2 text-sm">
