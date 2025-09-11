@@ -105,7 +105,7 @@
                 <div class="bg-white rounded-2xl p-6 shadow-lg">
                     <div class="flex items-start flex-col  mb-4">
                         <span class="text-5xl font-bold text-portal-600">{{ $calculatedPrice }} HLC </span>
-                        <span class="text-sm text-gray-600/50"> {{ $calculatedPrice * $price }} €</span>
+                        <span class="text-sm text-gray-600/50"> {{ round($calculatedPrice * $price, 2)}} €</span>
                     </div>
                 </div>
 
