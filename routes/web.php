@@ -3,10 +3,10 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\TrouController;
 use App\Http\Controllers\CurrencyController;
+use App\Http\Controllers\HomeController;
 
-Route::get('/', function () {
-    return view('pages.home.index');
-})->name('home');
+
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 
 Route::get('/hlc', function () {
