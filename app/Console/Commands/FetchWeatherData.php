@@ -5,7 +5,7 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
-use App\Models\Wind;
+use App\Models\Currency;
 
 class FetchWeatherData extends Command
 {
@@ -68,9 +68,13 @@ class FetchWeatherData extends Command
 
             $timestamp = now()->setTimestamp($dt);
 
-            Wind::create([
+            $price = 923 * $speed;
+            $price /= 7;
+            $price /= 150;
+
+            Currency::create([
                 'timestamp' => $timestamp,
-                'speed' => (float) $speed,
+                'price' => $price,
             ]);
 
             $this->info('Vent enregistré: ' . $speed . ' (' . $timestamp->toDateTimeString() . ')');
