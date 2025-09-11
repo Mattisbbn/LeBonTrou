@@ -13,9 +13,6 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
 
-        // 50 mesures de vent
-        Wind::factory(50)->create();
-
         Category::factory()->create([
             'name' => 'Trou dans le sol',
             'id' => 1,
