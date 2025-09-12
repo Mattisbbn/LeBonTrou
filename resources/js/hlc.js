@@ -79,7 +79,7 @@ async function updateChart(period) {
         const data = await fetchData();
 
         let slicedHistory = data.priceHistory;
-        const FIVE_MIN_POINTS_PER_DAY = 24 * 12; // 288
+
         const FIVE_MIN_POINTS_PER_7D = 7 * 24 * 12; // 2016
         const FIVE_MIN_POINTS_PER_30D = 30 * 24 * 12; // 8640
 
@@ -125,8 +125,7 @@ async function updateChart(period) {
         currentPeriod = period;
         switch (period) {
             case "1D": {
-                // Dernières 24h en pas de 5 min ⇒ 288 points
-                const lastDay = takeLastN(data.priceHistory, FIVE_MIN_POINTS_PER_DAY);
+                const lastDay = takeLastN(data.priceHistory, 48);
                 HLCChart.data.labels = lastDay.map((item) => item.timestamp);
                 HLCChart.data.datasets[0].data = lastDay.map((item) => item.price);
                 break;

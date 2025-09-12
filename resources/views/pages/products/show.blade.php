@@ -44,7 +44,7 @@
                                 Volume : {{ $trou->volume }}m3
                             </p>
                             <p class="text-gray-700 mb-4">
-                                Taille : {{ $trou->diameter }}m
+                                Diamètre : {{ $trou->diameter }}m
                             </p>
                             <h3 class="text-xl font-semibold text-void mb-3 mt-6">Utilisations recommandées</h3>
                             <p class="text-gray-700">
@@ -109,7 +109,7 @@
                     </div>
                 </div>
 
-                
+
 
 
                 <form action="{{ route('checkout', ['id' => $trou->id]) }}" class="flex flex-col space-y-4" method="GET">
@@ -124,7 +124,7 @@
                                     <div class="flex-1">
                                         <p class="font-semibold">{{ $shipment->name }}</p>
                                         <p class="text-sm text-gray-600">
-                                            Délai: {{ $shipment->time_to_ship }} jours - 
+                                            Délai: {{ $shipment->time_to_ship }} jours -
                                             {{ $shipment->price > 0 ? $shipment->price . ' HLC' : 'Gratuit' }}
                                         </p>
                                     </div>
@@ -132,7 +132,7 @@
                             @endforeach
                         </div>
                     </div>
-                
+
                     <button type="submit"
                         class="inline-flex items-center justify-center bg-portal-600 text-white py-4 rounded-xl font-bold text-lg hover:bg-blue-800 transition-colors">
                         <svg class="w-6 h-6 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
