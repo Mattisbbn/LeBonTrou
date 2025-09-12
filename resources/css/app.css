@@ -6,8 +6,8 @@
 @source '../**/*.js';
 
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+        --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji','Segoe UI Symbol', 'Noto Color Emoji';
+
         --color-blue-ribbon-50: #eff6ff;
         --color-blue-ribbon-100: #dbeafe;
         --color-blue-ribbon-200: #bfdbfe;
@@ -20,18 +20,6 @@
         --color-blue-ribbon-900: #1e3b8a;
         --color-blue-ribbon-950: #172554;
         --color-black-100: #0a0a0a;
-
-        --color-portal-50: #f7f3ff;
-        --color-portal-100: #efe9fe;
-        --color-portal-200: #e2d6fe;
-        --color-portal-300: #cbb5fd;
-        --color-portal-400: #ad8bfa;
-        --color-portal-500: #8b5cf6;
-        --color-portal-600: #713aed;
-        --color-portal-700: #5e28d9;
-        --color-portal-800: #4e21b6;
-        --color-portal-900: #421d95;
-        --color-portal-950: #2a1065;
 
         --color-medium-purple-50: #f7f3ff;
         --color-medium-purple-100: #efe9fe;
@@ -57,8 +45,6 @@
         --color-portal-900: #1e408a;
         --color-portal-950: #172a54;
 
-
-
         --color-void-50: #f6f6f6;
         --color-void-100: #e7e7e7;
         --color-void-200: #d1d1d1;
@@ -70,7 +56,6 @@
         --color-void-800: #454545;
         --color-void-900: #3d3d3d;
         --color-void-950: #0a0a0a;
-
 
         --color-deep-50: #f6f6f6;
         --color-deep-100: #e7e7e7;
@@ -84,8 +69,6 @@
         --color-deep-900: #3d3d3d;
         --color-deep-950: #1a1a1a;
 
-
-
         --color-quantum-50: #f7f3ff;
         --color-quantum-100: #efe9fe;
         --color-quantum-200: #e2d6fe;
@@ -98,15 +81,5 @@
         --color-quantum-900: #421d95;
         --color-quantum-950: #2a1065;
 
-
-
-
-
-
-
-
-
-
 }
-
 

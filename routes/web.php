@@ -5,6 +5,7 @@ use App\Http\Controllers\TrouController;
 use App\Http\Controllers\CurrencyController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\AuthController;
 
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -20,3 +21,5 @@ Route::get('/api/hlc', action: [CurrencyController::class, 'getPrice']);
 Route::get('/checkout/{id}', [CartController::class, 'index'])->name('checkout');
 
 
+Route::get('/login', [AuthController::class, 'loginPage'])->name('login');
+Route::get('/register', [AuthController::class, 'registerPage'])->name('register');

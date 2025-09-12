@@ -80,8 +80,8 @@ async function updateChart(period) {
 
         let slicedHistory = data.priceHistory;
 
-        const FIVE_MIN_POINTS_PER_7D = 7 * 24 * 12; // 2016
-        const FIVE_MIN_POINTS_PER_30D = 30 * 24 * 12; // 8640
+        const FIVE_MIN_POINTS_PER_7D = 7 * 24 * 12;
+        const FIVE_MIN_POINTS_PER_30D = 30 * 24 * 12;
 
         function takeLastN(items, n) {
             if (!Array.isArray(items)) return [];
@@ -168,4 +168,6 @@ periodButtons.forEach((button) => {
 });
 
 updateChart("1D");
-document.getElementById("1D").classList.add("active");
+if (document.getElementById("1D")) {
+    document.getElementById("1D").classList.add("active");
+}
