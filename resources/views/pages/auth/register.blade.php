@@ -11,6 +11,15 @@
                     </div>
 
                     <form id="login-form" class="space-y-6 section-clickable">
+
+                        <div class="space-y-2">
+                            <label class="block text-sm font-semibold text-void" contenteditable="false">Nom d'utilisateur</label>
+                            <div class="relative">
+                                <i class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" data-fa-i2svg=""><svg class="svg-inline--fa fa-envelope" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="envelope" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"></path></svg></i>
+                                <input type="text" class="w-full pl-12 pr-4 py-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-portal focus:border-transparent transition-all" placeholder="Nom d'utilisateur" required="">
+                            </div>
+                        </div>
+
                         <div class="space-y-2">
                             <label class="block text-sm font-semibold text-void" contenteditable="false">Adresse Email Quantique</label>
                             <div class="relative">
@@ -41,17 +50,11 @@
                             </div>
                         </div>
 
-                        <div class="flex items-center justify-between">
-                            <label class="flex items-center space-x-2">
-                                <input type="checkbox" class="w-4 h-4 text-portal bg-gray-100 border-gray-300 rounded focus:ring-portal">
-                                <span class="text-sm text-gray-600" contenteditable="false">Mémoriser dans le vide</span>
-                            </label>
-                            <span class="text-sm text-portal hover:text-blue-700 font-medium cursor-pointer" contenteditable="false">Mot de passe oublié?</span>
-                        </div>
+
 
                         <button type="submit" class="w-full bg-gradient-to-r from-portal-600 to-quantum-600 cursor-pointer text-white py-4 rounded-lg font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-200" contenteditable="false">
                             <i class="mr-2" data-fa-i2svg=""><svg class="svg-inline--fa fa-right-to-bracket" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="right-to-bracket" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M217.9 105.9L340.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L217.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1L32 320c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM352 416l64 0c17.7 0 32-14.3 32-32l0-256c0-17.7-14.3-32-32-32l-64 0c-17.7 0-32-14.3-32-32s14.3-32 32-32l64 0c53 0 96 43 96 96l0 256c0 53-43 96-96 96l-64 0c-17.7 0-32-14.3-32-32s14.3-32 32-32z"></path></svg></i>
-                            Accéder au Portail
+                            Créer un compte
                         </button>
 
 
